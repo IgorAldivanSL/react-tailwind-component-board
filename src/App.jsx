@@ -1,26 +1,51 @@
 
+import Button from './components/Button'
+
 function App() {
   return (
-    <main className="flex min-h-screen items-center justify-center bg-slate-950 p-6">
-      <section className="w-full max-w-md rounded-2xl border border-slate-700 bg-slate-900 p-8 text-center shadow-xl">
-        <span className="text-sm font-semibold uppercase tracking-widest text-cyan-400">
+    <main className="min-h-screen bg-slate-950 px-6 py-12 text-white">
+      <section className="mx-auto max-w-3xl">
+        <span className="text-sm font-semibold uppercase tracking-widest text-blue-400">
           React + Tailwind
         </span>
 
-        <h1 className="mt-4 text-3xl font-bold text-white">
-          Ambiente configurado!
+        <h1 className="mt-3 text-3xl font-bold">
+          Button System
         </h1>
 
-        <p className="mt-3 text-slate-300">
-          Nosso board de componentes está começando.
+        <p className="mt-2 text-slate-400">
+          Exercício 01 — Componentes reutilizáveis
         </p>
 
-        <button
-          type="button"
-          className="mt-6 rounded-xl bg-cyan-500 px-5 py-3 font-semibold text-slate-950 transition hover:bg-cyan-400 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-300"
-        >
-          Testar botão
-        </button>
+        <div className="mt-8 rounded-2xl border border-slate-800 bg-slate-900 p-6">
+          <h2 className="text-lg font-semibold">Variantes</h2>
+
+          <div className="mt-5 flex flex-wrap items-center gap-3">
+            <Button variant="primary">Primary</Button>
+            <Button variant="secondary">Secondary</Button>
+            <Button variant="danger">Danger</Button>
+            <Button variant="success">Success</Button>
+            <Button disabled>Disabled</Button>
+          </div>
+        </div>
+
+        <div className="mt-6 rounded-2xl border border-slate-800 bg-slate-900 p-6">
+          <h2 className="text-lg font-semibold">Tamanhos</h2>
+
+          <div className="mt-5 flex flex-wrap items-center gap-3">
+            <Button size="sm">Small</Button>
+            <Button size="md">Medium</Button>
+            <Button size="lg">Large</Button>
+          </div>
+        </div>
+
+        <div className="mt-6 rounded-2xl border border-slate-800 bg-slate-900 p-6">
+          <h2 className="text-lg font-semibold">Largura total</h2>
+
+          <div className="mt-5">
+            <Button fullWidth>Full Width</Button>
+          </div>
+        </div>
       </section>
     </main>
   )
