@@ -1,38 +1,40 @@
 
-import KPICard from './components/KPICard'
+import PricingCard from './components/PricingCard'
 
-const indicators = [
+const plans = [
   {
-    label: 'Receita total',
-    value: 'R$ 48.250',
-    change: '+12,8%',
-    comparison: 'vs. mês anterior',
-    icon: '↗',
-    trend: 'positive',
+    name: 'Free',
+    price: 'R$ 0',
+    period: '/mês',
+    features: [
+      'Acesso aos recursos básicos',
+      'Até 3 projetos',
+      'Suporte da comunidade',
+    ],
   },
   {
-    label: 'Usuários ativos',
-    value: '2.840',
-    change: '+8,2%',
-    comparison: 'vs. mês anterior',
-    icon: '◎',
-    trend: 'positive',
+    name: 'Pro',
+    price: 'R$ 49',
+    period: '/mês',
+    features: [
+      'Todos os recursos básicos',
+      'Projetos ilimitados',
+      'Relatórios avançados',
+      'Suporte prioritário',
+    ],
+    highlighted: true,
+    badge: 'Mais popular',
   },
   {
-    label: 'Despesas',
-    value: 'R$ 12.430',
-    change: '+4,5%',
-    comparison: 'vs. mês anterior',
-    icon: '↓',
-    trend: 'negative',
-  },
-  {
-    label: 'Taxa de conversão',
-    value: '3,6%',
-    change: '0%',
-    comparison: 'sem alteração',
-    icon: '%',
-    trend: 'neutral',
+    name: 'Enterprise',
+    price: 'R$ 199',
+    period: '/mês',
+    features: [
+      'Todos os recursos Pro',
+      'Gestão de equipes',
+      'Suporte especializado',
+      'Configurações personalizadas',
+    ],
   },
 ]
 
@@ -40,23 +42,25 @@ function App() {
   return (
     <main className="min-h-screen bg-slate-100 px-6 py-12">
       <section className="mx-auto max-w-6xl">
-        <span className="text-sm font-semibold uppercase tracking-widest text-blue-600">
-          React + Tailwind
-        </span>
+        <div className="text-center">
+          <span className="text-sm font-semibold uppercase tracking-widest text-blue-600">
+            React + Tailwind
+          </span>
 
-        <h1 className="mt-3 text-3xl font-bold text-slate-900">
-          Dashboard — Indicadores
-        </h1>
+          <h1 className="mt-3 text-3xl font-bold text-slate-900">
+            Planos e preços
+          </h1>
 
-        <p className="mt-2 text-slate-500">
-          Exercício 06 — KPI Cards e tendências
-        </p>
+          <p className="mt-2 text-slate-500">
+            Exercício 07 — Pricing Cards reutilizáveis
+          </p>
+        </div>
 
-        <div className="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-4">
-          {indicators.map((indicator) => (
-            <KPICard
-              key={indicator.label}
-              {...indicator}
+        <div className="mt-10 grid grid-cols-1 items-stretch justify-items-center gap-6 md:grid-cols-2 xl:grid-cols-3">
+          {plans.map((plan) => (
+            <PricingCard
+              key={plan.name}
+              {...plan}
             />
           ))}
         </div>
