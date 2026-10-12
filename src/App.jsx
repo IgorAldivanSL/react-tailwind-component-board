@@ -1,74 +1,46 @@
 
 import Button from './components/Button'
-import Avatar from './components/Avatar'
-import Badge from './components/Badge'
+import ProfileCard from './components/ProfileCard'
 
 function App() {
   return (
-    <main className="min-h-screen bg-slate-950 px-6 py-12 text-white">
-      <section className="mx-auto max-w-3xl">
-        <span className="text-sm font-semibold uppercase tracking-widest text-blue-400">
+    <main className="min-h-screen bg-slate-100 px-6 py-12 text-slate-900">
+      <section className="mx-auto max-w-5xl">
+        <span className="text-sm font-semibold uppercase tracking-widest text-blue-600">
           React + Tailwind
         </span>
 
         <h1 className="mt-3 text-3xl font-bold">
-          Badge + Avatar
+          Profile Card
         </h1>
 
-        <p className="mt-2 text-slate-400">
-          Exercício 02 — Componentes reutilizáveis
+        <p className="mt-2 text-slate-500">
+          Exercício 03 — Composição e reutilização de componentes
         </p>
 
-        <div className="mt-8 rounded-2xl border border-slate-800 bg-slate-900 p-6">
-          <h2 className="text-lg font-semibold">Avatar</h2>
+        <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2">
+          <ProfileCard
+            name="Ana Oliveira"
+            role="UI/UX Designer"
+            initials="AO"
+            category="Design"
+            description="Especialista em criar experiências digitais intuitivas, acessíveis e centradas nas necessidades dos usuários."
+          />
 
-          <div className="mt-5 flex flex-wrap items-center gap-4">
-            <Avatar initials="EI" />
-            <Avatar initials="UX" variant="violet" />
-            <Avatar initials="JS" variant="emerald" />
-          </div>
-
-          <h3 className="mt-8 text-sm font-semibold text-slate-300">
-            Tamanhos
-          </h3>
-
-          <div className="mt-4 flex flex-wrap items-center gap-4">
-            <Avatar initials="SM" size="sm" />
-            <Avatar initials="MD" size="md" />
-            <Avatar initials="LG" size="lg" />
-          </div>
-        </div>
-
-        <div className="mt-6 rounded-2xl border border-slate-800 bg-slate-900 p-6">
-          <h2 className="text-lg font-semibold">Badge</h2>
-
-          <div className="mt-5 flex flex-wrap items-center gap-3">
-            <Badge variant="info">Front-end</Badge>
-            <Badge variant="success">New</Badge>
-            <Badge variant="warning">Warning</Badge>
-          </div>
-        </div>
-
-        <div className="mt-6 rounded-2xl border border-slate-800 bg-slate-900 p-6">
-          <h2 className="text-lg font-semibold">Componentes combinados</h2>
-
-          <div className="mt-5 flex flex-wrap items-center gap-4">
-            <Avatar initials="IA" variant="violet" size="lg" />
-
-            <div>
-              <p className="font-semibold">Igor Aldivan</p>
-              <p className="mt-1 text-sm text-slate-400">
-                Desenvolvedor em formação
-              </p>
-              <div className="mt-2">
-                <Badge variant="success">Estudante</Badge>
-              </div>
-            </div>
-          </div>
+          <ProfileCard
+            name="Carlos Mendes"
+            role="Desenvolvedor Front-end"
+            initials="CM"
+            category="Tecnologia"
+            description="Desenvolvedor focado em React, interfaces responsivas e criação de componentes reutilizáveis."
+            layout="vertical"
+          />
         </div>
 
         <div className="mt-8">
-          <Button variant="secondary">Voltar aos botões</Button>
+          <Button variant="secondary">
+            Demonstração de botão
+          </Button>
         </div>
       </section>
     </main>
